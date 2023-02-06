@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%;
+    background-image: url('assets/Nia3.png');
+    background-size: cover;
+    background-repeat: repeat;
+    opacity: .9;
+    background-image: rgba(255, 255, 255, 0.8); }   
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

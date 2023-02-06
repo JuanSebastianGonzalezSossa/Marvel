@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+.toolbar {
+  background-color: rgb(202, 32, 32);;
+  color: antiquewhite;
+  display: flex;
+  justify-content: space-around;
+}
+
+.home{
+  font-family: 'Comic Neue', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+
+h1 {
+  font-family: 'Comic Neue', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+}

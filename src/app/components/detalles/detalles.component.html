@@ -1,0 +1,46 @@
+<div class="heroes-container">
+    <div *ngFor="let character of character" class="grid-item">
+        <div class="heroe">
+            <img width="300px" [src]="character.thumbnail.path + '.' + character.thumbnail.extension"
+                alt={{character.name}} />
+            <h5>Last modification: {{ character.modified | date: "dd/MM/yyyy" }}</h5>
+        </div>
+        <div class="information">
+            <h1 class="hero-name">{{ character.name }}</h1>
+            <h1>{{ character.description }}</h1>
+        </div>
+    </div>
+    <div *ngFor="let character of character" class="grid-item-stories">
+        <h1 class="hero-name">Stories</h1>
+        <div class="stories">
+            <ul>
+                <li *ngFor="let story of character.stories.items.slice(0, 5)">
+                    <div class="stories-list">
+                        <h1>{{ story.name }}</h1>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div *ngFor="let character of character" class="grid-item-comics">
+        <h1 class="hero-name"> Comics </h1>
+        <mat-grid-list cols="4" rowHeight="3:6">
+            <div class="filter">
+                <button mat-button (click)="filterComics('')">Todos</button>
+                <button mat-button (click)="filterComics('Comic')">Comic</button>
+                <button mat-button (click)="filterComics('Trade Paperback')">Trade Paperback</button>
+                <button mat-button (click)="filterComics('Hardcover')">Hardcover</button>
+            </div>
+            <mat-grid-tile *ngFor="let comics of filteredComics">
+                <div class="comics">
+                    <h2>{{comics.title}}</h2>
+                    <img width="300px" [src]="comics.thumbnail.path + '.' + comics.thumbnail.extension"
+                        alt={{comics.title}} />
+                    <div *ngFor="let onsaleDate of comics.dates.slice(0, 1)">
+                        <h4>Publication date: {{onsaleDate.date | date: "dd/MM/yyyy"}}</h4>
+                    </div>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>
